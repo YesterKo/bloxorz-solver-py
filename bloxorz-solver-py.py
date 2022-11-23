@@ -13,10 +13,18 @@ kaart = (
         (0,0,0,0,0,0,0,0,0,0,0,0)
         )
 
-plokk = [[1,1],[1,1]]
+plokk = ((1,1),(1,1))
+teada = {plokk:0}
+edasi = {plokk}
 auk = [10,10]
+kaigunr = 0
 
-def move(plokk, suund):
-    if plokk[0] == plokk[1]:
-            match suund:
-            
+
+while edasi:
+    kaigunr += 1
+    uued = []
+    for uuritav in edasi:
+        for kaik in ['N','S','E','W']:
+            uus = move(uuritav, kaik)
+            if 
+
