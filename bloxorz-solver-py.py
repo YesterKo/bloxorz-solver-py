@@ -14,7 +14,7 @@ kaart = (
         )
 
 plokk = ((1,1),(1,1)) #0 alati vasakul üleval, 1 paremal all
-teada = {plokk:0}
+teada = {0:plokk}
 edasi = {plokk}
 auk = (10,10)
 kaigunr = 0
@@ -84,9 +84,16 @@ while edasi:
             if uus[0] == auk and uus[1] == auk:
                 win = 1 # kiire fix
                 break # kiire fix
-            if kaart[uus[0][0]][uus[0][1]] == 1 and kaart[uus[1][0]][uus[1][1]] == 1 and uus not in teada:
+            print(uus[0][0])
+            print(uus[0][1])
+            print(uus[1][0])
+            print(uus[1][1])
+            print(type(uus))
+            if kaart[uus[0][0]][uus[0][1]] == 1 and kaart[uus[1][0]][uus[1][1]] == 1 and uus not in teada.values():
                 uued.append(uus)
-                teada[uus] = uuritav
+                print(teada)
+                print(uus)
+                [k for k, v in teada.items() if v == uus][0] = uuritav
         if win == 1: break # kiire fix
     if win == 1: break # kiire fix
     edasi = set()
